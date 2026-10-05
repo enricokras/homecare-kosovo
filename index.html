@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HomeCare Kosovo – Endrit Krasniqi |  | Property Care për diasporën</title>
-<meta name="description" content="HomeCare Kosovo kujdeset për shtëpi, banesa dhe prona në Kosovë për klientët që jetojnë në Gjermani, Zvicër dhe Austri. Kontroll, mirëmbajtje, pastrim, oborr dhe raportim në WhatsApp.">
-<meta name="keywords" content="property care Kosovo, property management Kosovo, diaspora Kosovo, house care Kosovo, Hausbetreuung Kosovo, Immobilienbetreuung Kosovo, HomeCare Kosovo">
+<title>HomeCare Kosovo | Property Care & Hausbetreuung in Kosovo</title>
+<meta name="description" content="HomeCare Kosovo ofron Property Care, Hausbetreuung dhe Immobilienbetreuung në Kosovë për diasporën në Gjermani, Zvicër dhe Austri. Kontroll, mirëmbajtje, pastrim, oborr, çelësa, riparime dhe raporte në WhatsApp.">
+<meta name="keywords" content="HomeCare Kosovo, Property Care Kosovo, Property Management Kosovo, Hausbetreuung Kosovo, Hausverwaltung Kosovo, Immobilienbetreuung Kosovo, Hausbetreuung Kosovo Deutschland, Hausbetreuung Kosovo Schweiz, Hausbetreuung Kosovo Österreich, property care for diaspora Kosovo">
 <meta name="author" content="HomeCare Kosovo">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#062b35">
 <link rel="canonical" href="https://enricokras.github.io/homecare-kosovo/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="HomeCare Kosovo | Property Care për diasporën">
-<meta property="og:description" content="Ti je larg. Ne jemi aty. Kujdes lokal për pronën tuaj në Kosovë.">
+<meta property="og:title" content="HomeCare Kosovo | Property Care & Hausbetreuung in Kosovo">
+<meta property="og:description" content="Ti je larg. Ne jemi aty. Property Care dhe Hausbetreuung për shtëpitë, banesat dhe pronat tuaja në Kosovë.">
 <meta property="og:url" content="https://enricokras.github.io/homecare-kosovo/">
 <meta property="og:site_name" content="HomeCare Kosovo">
 <meta name="twitter:card" content="summary_large_image">
@@ -83,7 +83,10 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
   "telephone":"+38343909647",
   "email":"homecare-ks@outlook.com",
   "url":"https://enricokras.github.io/homecare-kosovo/",
-  "address":{"@type":"PostalAddress","addressLocality":"Prishtinë","addressCountry":"XK"}
+  "address":{"@type":"PostalAddress","addressLocality":"Prishtinë","addressCountry":"XK"},
+  "areaServed":{"@type":"Country","name":"Kosovo"},
+  "knowsLanguage":["sq","de","en"],
+  "serviceType":["Property Care","Property Management","Hausbetreuung","Immobilienbetreuung","Home Inspection","Maintenance","Cleaning","Garden Care","Key Management"]
 }
 </script>
 </head>
@@ -158,7 +161,7 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <div class="contact-row"><div class="icon">✉️</div><div><h4>Email</h4><p><a href="mailto:homecare-ks@outlook.com">homecare-ks@outlook.com</a></p></div></div>
 <div class="contact-row"><div class="icon">🕐</div><div><h4>Orari</h4><p>Hënë–Premte: 08:00–18:00<br>Urgjencë: sipas paketës</p></div></div>
 </div>
-<div class="form"><div id="contactForm" class="form-grid"><div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div><div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div><div><label>Email<input type="email" name="email" required placeholder="email@example.com"></label></div><div><label>Paketa<select name="paketa"><option>Basic — €29</option><option>Plus — €59</option><option>Premium — €99</option><option>VIP — €149</option><option>Home Inspection — €49</option></select></label></div><div class="full"><label>Adresa e pronës<input name="adresa" required placeholder="Qyteti / fshati / adresa"></label></div><div class="full"><label>Mesazhi<textarea name="mesazhi" placeholder="Na tregoni çfarë shërbimi ju nevojitet..."></textarea></label></div><div class="full"><button class="btn btn-primary" type="button" onclick="sendForm()">Dërgo kërkesën →</button></div><div class="full"><div class="mini-note">Pas klikimit, kërkesa përgatitet automatikisht dhe hapet në WhatsApp.</div></div></div></div></div></div></section>
+<div class="form"><div id="contactForm" class="form-grid"><div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div><div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div><div><label>Email<input type="email" name="email" required placeholder="email@example.com"></label></div><div><label>Paketa<select name="paketa"><option>Basic — €29</option><option>Plus — €59</option><option>Premium — €99</option><option>VIP — €149</option><option>Home Inspection — €49</option></select></label></div><div class="full"><label>Adresa e pronës<input name="adresa" required placeholder="Qyteti / fshati / adresa"></label></div><div class="full"><label>Mesazhi<textarea name="mesazhi" placeholder="Na tregoni çfarë shërbimi ju nevojitet..."></textarea></label></div><div class="full"><a id="sendWhatsApp" class="btn btn-primary" href="https://wa.me/38343909647?text=P%C3%ABrsh%C3%ABndetje%20HomeCare%20Kosovo%2C%20dua%20t%C3%AB%20marr%20nj%C3%AB%20ofert%C3%AB." target="_blank" rel="noopener" onclick="return prepareWhatsApp(event)">Dërgo kërkesën →</a></div><div class="full"><div class="mini-note">Pas klikimit, kërkesa përgatitet automatikisht dhe hapet në WhatsApp.</div></div></div></div></div></div></section>
 
 <section class="impressum" id="impressum">
 <div class="container">
@@ -201,36 +204,24 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <div class="toast" id="toast">Faleminderit! Kërkesa juaj u pranua. Në versionin live kjo lidhet me email/WhatsApp/CRM.</div>
 <script>
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-function sendForm(){
-  const form = document.getElementById("contactForm");
-  const emri = form.querySelector('[name="emri"]').value.trim();
-  const telefoni = form.querySelector('[name="telefoni"]').value.trim();
-  const email = form.querySelector('[name="email"]').value.trim();
-  const paketa = form.querySelector('[name="paketa"]').value;
-  const adresa = form.querySelector('[name="adresa"]').value.trim();
-  const mesazhi = form.querySelector('[name="mesazhi"]').value.trim();
-
+function prepareWhatsApp(e){
+  const form=document.getElementById("contactForm");
+  const emri=form.querySelector('[name="emri"]').value.trim();
+  const telefoni=form.querySelector('[name="telefoni"]').value.trim();
+  const email=form.querySelector('[name="email"]').value.trim();
+  const paketa=form.querySelector('[name="paketa"]').value;
+  const adresa=form.querySelector('[name="adresa"]').value.trim();
+  const mesazhi=form.querySelector('[name="mesazhi"]').value.trim();
   if(!emri || !telefoni || !email || !adresa){
+    e.preventDefault();
     alert("Ju lutem plotësoni emrin, telefonin, emailin dhe adresën.");
-    return;
+    return false;
   }
-
-  const greeting = currentLang === "de" ? "Guten Tag HomeCare Kosovo!" : currentLang === "en" ? "Hello HomeCare Kosovo!" : "Përshëndetje HomeCare Kosovo!";
-  const message = [
-    greeting,
-    "",
-    "Dua të kërkoj një ofertë.",
-    "",
-    "Emri: " + emri,
-    "Telefon: " + telefoni,
-    "Email: " + email,
-    "Paketa: " + paketa,
-    "Adresa e pronës: " + adresa,
-    "Mesazhi: " + (mesazhi || "Nuk ka mesazh shtesë.")
-  ].join("\n");
-
-  const waUrl = "https://wa.me/38343909647?text=" + encodeURIComponent(message);
-  window.location.href = waUrl;
+  const greeting=currentLang === "de" ? "Guten Tag HomeCare Kosovo!" : currentLang === "en" ? "Hello HomeCare Kosovo!" : "Përshëndetje HomeCare Kosovo!";
+  const message=[greeting,"","Dua të kërkoj një ofertë.","","Emri: "+emri,"Telefon: "+telefoni,"Email: "+email,"Paketa: "+paketa,"Adresa e pronës: "+adresa,"Mesazhi: "+(mesazhi || "Nuk ka mesazh shtesë.")].join("\n");
+  const url="https://wa.me/38343909647?text="+encodeURIComponent(message);
+  document.getElementById("sendWhatsApp").href=url;
+  return true;
 }
 </script>
 <a class="whatsapp" href="https://wa.me/38343909647?text=Përshëndetje%20HomeCare%20Kosovo%2C%20dua%20të%20marr%20një%20ofertë." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
