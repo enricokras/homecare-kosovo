@@ -94,7 +94,7 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <div class="contact-row"><div class="icon">✉️</div><div><h4>Email</h4><p>homecare-ks@outlook.com</p></div></div>
 <div class="contact-row"><div class="icon">🕐</div><div><h4>Orari</h4><p>Hënë–Premte: 08:00–18:00<br>Urgjencë: sipas paketës</p></div></div>
 </div>
-<div class="form"><form name="contact" onsubmit="sendForm(event)">
+<div class="form"><form name="contact" id="contactForm">
 <input type="hidden" name="form-name" value="contact">
 <div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div>
 <div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div>
@@ -115,32 +115,31 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <footer><div class="container"><div class="footer-grid"><div><div class="logo" style="color:#fff"><div class="logo-mark" style="background:#fff;color:var(--navy)">⌂</div><div>HOMECARE<small>KOSOVO</small></div></div><p>Ti je larg. Ne jemi aty.</p></div><div><div class="footer-title">Faqet</div><div class="footer-links"><a href="#home">Home</a><a href="#paketat">Paketat</a><a href="#sherbimet">Shërbimet</a><a href="#si-funksionon">Si funksionon</a></div></div><div><div class="footer-title">Kontakt</div><div class="footer-links"><a href="#kontakt">Kërko ofertë</a><a href="mailto:homecare-ks@outlook.com">Email</a><a href="#kontakt">WhatsApp</a></div></div></div><div class="copyright"><span>© 2026 HomeCare Kosovo. Të gjitha të drejtat e rezervuara.</span><span>Prishtinë · Kosovë</span></div></div></footer>
 <div class="toast" id="toast">Po hapim WhatsApp për ta dërguar kërkesën...</div>
 <script>
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-function sendForm(e){
-  e.preventDefault();
-  const f=e.target;
-  const emri=f.emri.value.trim();
-  const telefoni=f.telefoni.value.trim();
-  const email=f.email.value.trim();
-  const paketa=f.paketa.value;
-  const adresa=f.adresa.value.trim();
-  const mesazhi=f.mesazhi.value.trim();
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  const text =
-    "Përshëndetje HomeCare Kosovo!%0A%0A" +
-    "Dua të kërkoj një ofertë.%0A%0A" +
-    "Emri: " + encodeURIComponent(emri) + "%0A" +
-    "Telefon: " + encodeURIComponent(telefoni) + "%0A" +
-    "Email: " + encodeURIComponent(email) + "%0A" +
-    "Paketa: " + encodeURIComponent(paketa) + "%0A" +
-    "Adresa e pronës: " + encodeURIComponent(adresa) + "%0A" +
-    "Mesazhi: " + encodeURIComponent(mesazhi || "Nuk ka mesazh shtesë.") ;
+    const form = this;
 
-  document.getElementById('toast').innerText="Po hapim WhatsApp për ta dërguar kërkesën...";
-  document.getElementById('toast').style.display='block';
-  window.open("https://wa.me/38343909647?text="+text, "_blank");
-  setTimeout(()=>{document.getElementById('toast').style.display='none'; f.reset();},1500);
-}
+    const emri = form.emri.value.trim();
+    const telefoni = form.telefoni.value.trim();
+    const email = form.email.value.trim();
+    const paketa = form.paketa.value;
+    const adresa = form.adresa.value.trim();
+    const mesazhi = form.mesazhi.value.trim();
+
+    const whatsappMessage =
+        "Përshëndetje HomeCare Kosovo!%0A%0A" +
+        "Dua të kërkoj një ofertë.%0A%0A" +
+        "Emri: " + encodeURIComponent(emri) + "%0A" +
+        "Telefon: " + encodeURIComponent(telefoni) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Paketa: " + encodeURIComponent(paketa) + "%0A" +
+        "Adresa: " + encodeURIComponent(adresa) + "%0A" +
+        "Mesazhi: " + encodeURIComponent(mesazhi || "Nuk ka mesazh shtesë.");
+
+    window.location.href =
+        "https://wa.me/38343909647?text=" + whatsappMessage;
+});
 </script>
 <a class="whatsapp" href="https://wa.me/38343909647?text=Përshëndetje%20HomeCare%20Kosovo%2C%20dua%20të%20marr%20një%20ofertë." target="_blank" aria-label="WhatsApp">◉</a>
 <script>
