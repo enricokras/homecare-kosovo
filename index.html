@@ -94,14 +94,39 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <div class="contact-row"><div class="icon">✉️</div><div><h4>Email</h4><p>homecare-ks@outlook.com</p></div></div>
 <div class="contact-row"><div class="icon">🕐</div><div><h4>Orari</h4><p>Hënë–Premte: 08:00–18:00<br>Urgjencë: sipas paketës</p></div></div>
 </div>
-<div class="form"><form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="contact"><p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p><div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div><div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div><div><label>Email<input type="email" name="email" required placeholder="email@example.com"></label></div><div><label>Paketa<select name="paketa"><option>Basic — €29</option><option>Plus — €59</option><option>Premium — €99</option><option>VIP — €149</option><option>Home Inspection — €49</option></select></label></div><div class="full"><label>Adresa e pronës<input placeholder="Qyteti / fshati / adresa"></label></div><div class="full"><label>Mesazhi<textarea placeholder="Na tregoni çfarë shërbimi ju nevojitet..."></textarea></label></div><div class="full"><button class="btn btn-primary" type="submit">Dërgo kërkesën →</button></div></form></div></div></div></section>
+<div class="form"><form name="contact" id="contactForm" onsubmit="sendForm(event)"><div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div><div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div><div><label>Email<input type="email" name="email" required placeholder="email@example.com"></label></div><div><label>Paketa<select name="paketa"><option>Basic — €29</option><option>Plus — €59</option><option>Premium — €99</option><option>VIP — €149</option><option>Home Inspection — €49</option></select></label></div><div class="full"><label>Adresa e pronës<input name="adresa" required placeholder="Qyteti / fshati / adresa"></label></div><div class="full"><label>Mesazhi<textarea name="mesazhi" placeholder="Na tregoni çfarë shërbimi ju nevojitet..."></textarea></label></div><div class="full"><button class="btn btn-primary" type="submit">Dërgo kërkesën →</button></div></form></div></div></div></section>
 </main>
 
 <footer><div class="container"><div class="footer-grid"><div><div class="logo" style="color:#fff"><div class="logo-mark" style="background:#fff;color:var(--navy)">⌂</div><div>HOMECARE<small>KOSOVO</small></div></div><p>Ti je larg. Ne jemi aty.</p></div><div><div class="footer-title">Faqet</div><div class="footer-links"><a href="#home">Home</a><a href="#paketat">Paketat</a><a href="#sherbimet">Shërbimet</a><a href="#si-funksionon">Si funksionon</a></div></div><div><div class="footer-title">Kontakt</div><div class="footer-links"><a href="#kontakt">Kërko ofertë</a><a href="mailto:homecare-ks@outlook.com">Email</a><a href="#kontakt">WhatsApp</a></div></div></div><div class="copyright"><span>© 2026 HomeCare Kosovo. Të gjitha të drejtat e rezervuara.</span><span>Prishtinë · Kosovë</span></div></div></footer>
 <div class="toast" id="toast">Faleminderit! Kërkesa juaj u pranua. Në versionin live kjo lidhet me email/WhatsApp/CRM.</div>
 <script>
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-function sendForm(e){e.preventDefault();document.getElementById('toast').style.display='block';setTimeout(()=>document.getElementById('toast').style.display='none',4000);e.target.reset();}
+function sendForm(e){
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const emri = form.emri.value.trim();
+  const telefoni = form.telefoni.value.trim();
+  const email = form.email.value.trim();
+  const paketa = form.paketa.value;
+  const adresa = form.adresa.value.trim();
+  const mesazhi = form.mesazhi.value.trim();
+
+  const message =
+    "Përshëndetje HomeCare Kosovo!\n\n" +
+    "Dua të kërkoj një ofertë.\n\n" +
+    "Emri: " + emri + "\n" +
+    "Telefon: " + telefoni + "\n" +
+    "Email: " + email + "\n" +
+    "Paketa: " + paketa + "\n" +
+    "Adresa e pronës: " + adresa + "\n" +
+    "Mesazhi: " + (mesazhi || "Nuk ka mesazh shtesë.");
+
+  const url = "https://wa.me/38343909647?text=" + encodeURIComponent(message);
+
+  // Use the same tab: this avoids popup blockers and prevents form POST/405 errors.
+  window.location.assign(url);
+}
 </script>
 <a class="whatsapp" href="https://wa.me/38343909647?text=Përshëndetje%20HomeCare%20Kosovo%2C%20dua%20të%20marr%20një%20ofertë." target="_blank" aria-label="WhatsApp">◉</a>
 <script>
