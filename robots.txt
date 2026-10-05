@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://enricokras.github.io/homecare-kosovo/sitemap.xml
