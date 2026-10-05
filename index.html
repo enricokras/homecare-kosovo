@@ -230,7 +230,7 @@ function applyLanguage(lang){
   pricing.querySelectorAll(".plan:not(.special) .btn").forEach((e,i)=>e.textContent=t.choose[i]);
   const popular=pricing.querySelector(".popular");
   if(popular) popular.textContent=t.popular;
-  pricing.querySelector(".special .desc").textContent=t.inspection;
+  pricing.querySelector(".special p").textContent=t.inspection;
   pricing.querySelector(".special .btn").textContent=t.order;
 
   const service=document.querySelector("#sherbimet");
