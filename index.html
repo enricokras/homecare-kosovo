@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomeCare Kosovo — Prona juaj. Kujdesi ynë.</title>
+<meta name="description" content="HomeCare Kosovo kujdeset për shtëpinë, banesën dhe pronën tuaj në Kosovë ndërsa ju jetoni jashtë vendit — me kontroll, mirëmbajtje, transparencë dhe raportim profesional.">
+<style>
+:root{--navy:#062b35;--green:#0aa36a;--green2:#087d52;--light:#f3f8f6;--text:#15343b;--muted:#667a80;--white:#fff;--line:#dce9e5;--shadow:0 16px 45px rgba(6,43,53,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}.container{width:min(1140px,92%);margin:auto}.topbar{background:var(--navy);color:#dcebea;font-size:13px;padding:8px 0}.topbar .container{display:flex;justify-content:space-between;gap:20px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}nav{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);letter-spacing:.5px}.logo-mark{width:40px;height:40px;border-radius:12px;background:var(--navy);display:grid;place-items:center;color:#fff;font-size:20px}.logo span{display:block;font-size:15px;line-height:1}.logo small{display:block;color:var(--green);font-size:9px;letter-spacing:2px;margin-top:4px}
+.links{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:700}.links a:hover{color:var(--green)}.cta{background:var(--green);color:#fff!important;padding:12px 18px;border-radius:10px;box-shadow:0 8px 20px rgba(10,163,106,.22)}.lang{border:1px solid var(--line);padding:9px 11px;border-radius:9px;background:#fff}
+.hero{min-height:690px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(3,33,42,.93) 0%,rgba(3,33,42,.78) 45%,rgba(3,33,42,.18) 100%),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85') center/cover}.hero-content{max-width:650px;color:#fff;padding:80px 0}.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#83e0b9;font-weight:800}.hero h1{font-size:clamp(42px,6vw,74px);line-height:1.02;margin:15px 0 22px;letter-spacing:-2px}.hero h1 span{color:#53d79d}.hero p{font-size:19px;color:#e1eceb;max-width:590px}.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{padding:14px 22px;border-radius:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}.btn-primary{background:var(--green);color:#fff}.btn-outline{border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08)}
+.hero-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}.hero-points div{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);padding:9px 12px;border-radius:999px;font-size:13px}
+section{padding:90px 0}.section-head{max-width:700px;margin-bottom:45px}.section-head.center{text-align:center;margin-left:auto;margin-right:auto}.section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.1;margin:10px 0 15px;color:var(--navy);letter-spacing:-1.5px}.section-head p{color:var(--muted);font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:-45px;position:relative}.stat{background:#fff;border:1px solid var(--line);padding:25px;border-radius:16px;box-shadow:var(--shadow)}.stat strong{display:block;font-size:30px;color:var(--navy)}.stat span{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-img{min-height:450px;border-radius:24px;background:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1000&q=85') center/cover;box-shadow:var(--shadow)}.checks{display:grid;gap:14px;margin:25px 0}.check{display:flex;gap:12px;align-items:flex-start}.check b{color:var(--green)}
+.pricing{background:var(--light)}.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:27px;position:relative}.plan.popular{border:2px solid var(--green);transform:translateY(-8px);box-shadow:var(--shadow)}.badge{position:absolute;top:-13px;left:20px;background:var(--green);color:#fff;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:800}.plan h3{margin:0;color:var(--navy);font-size:21px}.plan .desc{font-size:13px;color:var(--muted);min-height:42px}.price{font-size:40px;font-weight:900;color:var(--navy);margin:10px 0}.price small{font-size:13px;color:var(--muted);font-weight:600}.features{list-style:none;padding:0;margin:20px 0 25px}.features li{padding:6px 0;font-size:13px}.features li:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}.plan .btn{width:100%;background:var(--navy);color:#fff}.popular .btn{background:var(--green)}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{border:1px solid var(--line);border-radius:17px;padding:24px;background:#fff;transition:.2s}.service:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.icon{width:44px;height:44px;border-radius:12px;background:#e8f7f1;color:var(--green2);display:grid;place-items:center;font-size:22px;margin-bottom:16px}.service h3{margin:0 0 7px;color:var(--navy);font-size:18px}.service p{margin:0;color:var(--muted);font-size:14px}.service strong{display:block;margin-top:16px;color:var(--green2)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{padding:25px;border:1px solid var(--line);border-radius:16px}.num{width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900}.step h3{font-size:16px;color:var(--navy)}.step p{font-size:13px;color:var(--muted)}
+.special{margin-top:25px;background:var(--navy);color:#fff;border-radius:20px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.special h3{margin:0 0 5px}.special p{margin:0;color:#c8d9d7}
+.faq-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:30px}.faq-item{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}.faq-q{padding:18px 20px;font-weight:800;display:flex;justify-content:space-between;cursor:pointer}.faq-a{display:none;padding:0 20px 18px;color:var(--muted);font-size:14px}.faq-item.open .faq-a{display:block}.trust{background:#eaf7f2;border-radius:18px;padding:28px}.trust h3{color:var(--navy)}.trust li{margin:10px 0}
+.contact{background:var(--light)}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}.contact-card,.form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}.contact-row{display:flex;gap:14px;margin:20px 0}.contact-row .icon{flex:none}.contact-row h4{margin:0;color:var(--navy)}.contact-row p{margin:2px 0;color:var(--muted);font-size:14px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.full{grid-column:1/-1}label{font-size:13px;font-weight:800;color:var(--navy)}input,select,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;margin-top:6px;font:inherit}textarea{min-height:130px;resize:vertical}button{border:0;cursor:pointer;font:inherit}
+footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}.footer-title{color:#fff;font-weight:900}.footer-links{display:grid;gap:8px;font-size:14px}.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:20px;font-size:12px;display:flex;justify-content:space-between}
+.mobile{display:none}.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:15px 18px;border-radius:12px;display:none;z-index:100;box-shadow:var(--shadow)}
+@media(max-width:950px){.links{display:none}.mobile{display:block}.plans{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid,.faq-grid{grid-template-columns:1fr}.about-img{min-height:330px}}
+@media(max-width:600px){.topbar .container{justify-content:center}.topbar span:last-child{display:none}.hero{min-height:700px}.hero-content{padding:60px 0}.hero h1{font-size:45px}.hero p{font-size:16px}.stats{grid-template-columns:1fr;margin-top:20px}.plans,.services,.steps{grid-template-columns:1fr}.plan.popular{transform:none}.section-head h2{font-size:34px}.special{display:block}.special .btn{margin-top:18px}.footer-grid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}form{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+<style>
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:90;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:27px;box-shadow:0 10px 25px rgba(0,0,0,.18)}
+.whatsapp:hover{transform:scale(1.05)}
+.lang-btn{cursor:pointer}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>🇽🇰 Kosovë · 🇩🇪 Gjermani · 🇨🇭 Zvicër · 🇦🇹 Austri</span><span>Shqip · Deutsch · English</span></div></div>
+<header><div class="container"><nav>
+<a class="logo" href="#home"><div class="logo-mark">⌂</div><div>HOMECARE<small>KOSOVO</small></div></a>
+<div class="links"><a href="#home">Home</a><a href="#paketat">Paketat</a><a href="#sherbimet">Shërbimet</a><a href="#si-funksionon">Si funksionon</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a><a class="cta" href="#kontakt">Kërko ofertë</a><button class="lang lang-btn" onclick="toggleLang()">SQ / DE</button></div>
+<div class="mobile"><a class="cta" href="#kontakt">Kërko ofertë</a></div>
+</nav></div></header>
+
+<main>
+<section class="hero" id="home"><div class="container"><div class="hero-content">
+<div class="eyebrow">Property Care për diasporën</div>
+<h1>Shtëpia jote në Kosovë.<br><span>Kujdesi ynë.</span></h1>
+<p>Jeton në Gjermani, Zvicër, Austri apo diku tjetër jashtë Kosovës dhe ke shtëpi, banesë ose vilë këtu? Ne bëhemi sytë dhe duart e tua në Kosovë — kontrollojmë, mirëmbajmë dhe menaxhojmë pronën tënde edhe kur je mijëra kilometra larg.</p>
+<div class="buttons"><a class="btn btn-primary" href="#kontakt">Kërko ofertë falas →</a><a class="btn btn-outline" href="#paketat">Shiko paketat</a></div>
+<div class="hero-points"><div>✓ Kontroll & dokumentim</div><div>✓ Mirëmbajtje & riparime</div><div>✓ Pastrim</div><div>✓ Oborr & kopsht</div><div>✓ Raport në WhatsApp</div></div>
+</div></div></section>
+
+<div class="container"><div class="stats"><div class="stat"><strong>24/7</strong><span>Kujdes dhe komunikim sipas nevojës</span></div><div class="stat"><strong>📸</strong><span>Foto & video pas vizitës</span></div><div class="stat"><strong>🇽🇰</strong><span>Fokus te pronat në Kosovë</span></div></div></div>
+
+<section><div class="container"><div class="about-grid"><div class="about-img"></div><div><div class="eyebrow">Për shqiptarët e diasporës</div><div class="section-head"><h2>Ti je larg. Ne jemi aty.</h2><p>Një ekip lokal që kujdeset për pronën tënde në Kosovë, me transparencë të plotë dhe raportim pas çdo vizite.</p></div><div class="checks"><div class="check"><b>✓</b><span>Çdo vizitë dokumentohet me foto dhe video.</span></div><div class="check"><b>✓</b><span>Çdo shpenzim shtesë aprovohet nga ju.</span></div><div class="check"><b>✓</b><span>Koordinojmë mjeshtër dhe shërbime lokale.</span></div><div class="check"><b>✓</b><span>Ju informojmë menjëherë nëse zbulohet problem.</span></div></div><a class="btn btn-primary" href="#kontakt">Mëso më shumë →</a></div></div></div></section>
+
+<section class="pricing" id="paketat"><div class="container"><div class="section-head center"><div class="eyebrow">Zgjidh paketën</div><h2>Paketat tona</h2><p>Zgjidh paketën që i përshtatet më së miri nevojave të tua. Shërbimet mund të personalizohen.</p></div>
+<div class="plans">
+<div class="plan"><h3>Basic</h3><div class="desc">Për kontroll bazë.</div><div class="price">€29 <small>/ muaj</small></div><ul class="features"><li>1 kontroll / muaj</li><li>Kontroll i dyerve & dritareve</li><li>Kontroll i ujit</li><li>Kontroll i rrymës</li><li>Kontroll i rrjedhjeve</li><li>10+ fotografi</li><li>Raport mujor</li></ul><a class="btn" href="#kontakt">Zgjidh Basic</a></div>
+<div class="plan popular"><span class="badge">Më e kërkuara</span><h3>Plus</h3><div class="desc">Për kujdes të rregullt.</div><div class="price">€59 <small>/ muaj</small></div><ul class="features"><li>Gjithçka nga Basic</li><li>2 kontrolle / muaj</li><li>Foto + video pas vizitës</li><li>Kontroll i lagështisë</li><li>Pastrim i lehtë 1×/muaj</li><li>Kontroll i oborrit</li><li>Koordinim me mjeshtër</li><li>Prioritet në kërkesa</li></ul><a class="btn" href="#kontakt">Zgjidh Plus</a></div>
+<div class="plan"><h3>Premium</h3><div class="desc">Për vila dhe prona më të mëdha.</div><div class="price">€99 <small>/ muaj</small></div><ul class="features"><li>Gjithçka nga Plus</li><li>4 vizita / muaj</li><li>Pastrim i planifikuar</li><li>Kontroll i plotë i jashtëm</li><li>Kontroll i ngrohjes & klimës</li><li>Kontroll i garazhit</li><li>Koordinim i plotë</li><li>Raport foto/video</li></ul><a class="btn" href="#kontakt">Zgjidh Premium</a></div>
+<div class="plan"><h3>VIP</h3><div class="desc">Full Home Care.</div><div class="price">€149 <small>/ muaj</small></div><ul class="features"><li>Kontroll çdo javë</li><li>Foto + video çdo vizitë</li><li>Pastrim i rregullt</li><li>Oborr/kopsht</li><li>Kontroll i automjetit</li><li>Përgatitje para ardhjes</li><li>Ndërhyrje urgjente</li><li>Prioritet maksimal</li></ul><a class="btn" href="#kontakt">Zgjidh VIP</a></div>
+</div><div class="special"><div><h3>Home Inspection — €49</h3><p>Kontroll i plotë i pronës para se të lidhësh abonimin.</p></div><a class="btn btn-primary" href="#kontakt">Porosite tani</a></div></div></section>
+
+<section id="sherbimet"><div class="container"><div class="section-head"><div class="eyebrow">Një gamë e plotë shërbimesh</div><h2>Shërbimet tona</h2><p>Çdo gjë që prona jote mund të ketë nevojë, nga një kontroll i thjeshtë deri te renovimi.</p></div>
+<div class="services">
+<div class="service"><div class="icon">🧹</div><h3>Pastrim</h3><p>Pastrim standard, komplet ose para ardhjes.</p><strong>Nga €35</strong></div>
+<div class="service"><div class="icon">🌿</div><h3>Oborr & Kopsht</h3><p>Kositje bari, pastrim dhe mirëmbajtje kopshti.</p><strong>Nga €20</strong></div>
+<div class="service"><div class="icon">🚗</div><h3>Automjeti</h3><p>Car check, bateri, goma, lëngje dhe kilometrazh.</p><strong>€20</strong></div>
+<div class="service"><div class="icon">🔧</div><h3>Mirëmbajtje</h3><p>Elektricist, hidraulik, ngrohje, klimë, bravandreqës.</p><strong>Nga €15</strong></div>
+<div class="service"><div class="icon">🚨</div><h3>Emergency Service</h3><p>Reagim për rrjedhje, rrymë, ngrohje dhe dëmtime.</p><strong>Reagim i shpejtë</strong></div>
+<div class="service"><div class="icon">🏗️</div><h3>Renovation Control</h3><p>Oferta, koordinim, mbikëqyrje dhe foto/video.</p><strong>Nga €30/vizitë</strong></div>
+<div class="service"><div class="icon">🔑</div><h3>Key Management</h3><p>Hapje/mbyllje e pronës dhe përgatitje para ardhjes.</p><strong>Nga €20</strong></div>
+<div class="service"><div class="icon">🏠</div><h3>Home Inspection</h3><p>Kontroll i plotë me 30+ foto, video dhe raport.</p><strong>€49</strong></div>
+</div></div></section>
+
+<section id="si-funksionon" style="background:var(--light)"><div class="container"><div class="section-head center"><div class="eyebrow">E thjeshtë. E sigurt. Transparente.</div><h2>Si funksionon?</h2><p>Pesë hapa për të pasur kontroll mbi pronën edhe kur je larg.</p></div>
+<div class="steps"><div class="step"><div class="num">1</div><h3>Regjistrohu</h3><p>Na dërgon emrin, adresën, llojin e pronës dhe paketën.</p></div><div class="step"><div class="num">2</div><h3>Vizita e parë</h3><p>Bëjmë Home Inspection me foto, video dhe checklist.</p></div><div class="step"><div class="num">3</div><h3>Fillon kujdesi</h3><p>Vizitat kryhen sipas paketës dhe pronari mbahet i informuar.</p></div><div class="step"><div class="num">4</div><h3>Merr raportin</h3><p>Foto, video, checklist dhe çdo problem i zbuluar.</p></div><div class="step"><div class="num">5</div><h3>Nëse ka problem</h3><p>Ju njoftojmë dhe kërkojmë aprovimin para ndërhyrjes.</p></div></div></div></section>
+
+<section id="faq"><div class="container"><div class="section-head center"><div class="eyebrow">Keni pyetje?</div><h2>Pyetjet më të shpeshta</h2></div><div class="faq-grid"><div>
+<div class="faq-item open"><div class="faq-q">A duhet të jem në Kosovë? <span>+</span></div><div class="faq-a">Jo. Ne kujdesemi për pronën tuaj dhe ju dërgojmë raport pas vizitave.</div></div>
+<div class="faq-item"><div class="faq-q">A mund ta kontrolloni pronën para se të vij në Kosovë? <span>+</span></div><div class="faq-a">Po. Mund të porosisni një Home Inspection ose vizitë përgatitore.</div></div>
+<div class="faq-item"><div class="faq-q">A bëni riparime? <span>+</span></div><div class="faq-a">Po. Koordinojmë partnerë të verifikuar dhe ju dërgojmë ofertën para punës.</div></div>
+<div class="faq-item"><div class="faq-q">A paguaj për riparimet veç? <span>+</span></div><div class="faq-a">Po. Abonimi mbulon shërbimet e paketës; materialet dhe punët shtesë tarifohen veç.</div></div>
+<div class="faq-item"><div class="faq-q">A mund t'ju jap çelësin? <span>+</span></div><div class="faq-a">Po, me procedurë të dokumentuar për ruajtjen dhe përdorimin e çelësave.</div></div>
+<div class="faq-item"><div class="faq-q">A mund të më dërgoni fotografi? <span>+</span></div><div class="faq-a">Po. Vizitat dokumentohen me foto dhe, sipas paketës, edhe video.</div></div>
+<div class="faq-item"><div class="faq-q">A më ndihmoni me renovimin? <span>+</span></div><div class="faq-a">Po. Mund të koordinojmë oferta, ekipe, vizita dhe raportim në terren.</div></div>
+</div><div class="trust"><h3>🛡️ Siguria & Besimi</h3><ul><li>Çdo vizitë regjistrohet.</li><li>Çdo ndërhyrje dokumentohet.</li><li>Çdo shpenzim kërkon aprovim.</li><li>Fotot ruhen në profilin e klientit.</li><li>Partnerët kontrollohen.</li></ul><p><b>“Gjithçka që është e jotja, ne e trajtojmë sikur të ishte e jona.”</b></p></div></div></div></section>
+
+<section class="contact" id="kontakt"><div class="container"><div class="section-head"><div class="eyebrow">Jemi këtu për ju</div><h2>Na kontaktoni</h2><p>Na tregoni për pronën tuaj dhe ne do t'ju përgatisim një ofertë të përshtatur.</p></div><div class="contact-grid"><div class="contact-card">
+<div class="contact-row"><div class="icon">📍</div><div><h4>Adresa</h4><p>Prishtinë, Kosovë</p></div></div>
+<div class="contact-row"><div class="icon">💬</div><div><h4>Telefon & WhatsApp</h4><p>+383 43 909 647</p></div></div>
+<div class="contact-row"><div class="icon">✉️</div><div><h4>Email</h4><p>homecare-ks@outlook.com</p></div></div>
+<div class="contact-row"><div class="icon">🕐</div><div><h4>Orari</h4><p>Hënë–Premte: 08:00–18:00<br>Urgjencë: sipas paketës</p></div></div>
+</div>
+<div class="form"><form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="contact"><p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p><div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div><div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div><div><label>Email<input type="email" name="email" required placeholder="email@example.com"></label></div><div><label>Paketa<select name="paketa"><option>Basic — €29</option><option>Plus — €59</option><option>Premium — €99</option><option>VIP — €149</option><option>Home Inspection — €49</option></select></label></div><div class="full"><label>Adresa e pronës<input placeholder="Qyteti / fshati / adresa"></label></div><div class="full"><label>Mesazhi<textarea placeholder="Na tregoni çfarë shërbimi ju nevojitet..."></textarea></label></div><div class="full"><button class="btn btn-primary" type="submit">Dërgo kërkesën →</button></div></form></div></div></div></section>
+</main>
+
+<footer><div class="container"><div class="footer-grid"><div><div class="logo" style="color:#fff"><div class="logo-mark" style="background:#fff;color:var(--navy)">⌂</div><div>HOMECARE<small>KOSOVO</small></div></div><p>Ti je larg. Ne jemi aty.</p></div><div><div class="footer-title">Faqet</div><div class="footer-links"><a href="#home">Home</a><a href="#paketat">Paketat</a><a href="#sherbimet">Shërbimet</a><a href="#si-funksionon">Si funksionon</a></div></div><div><div class="footer-title">Kontakt</div><div class="footer-links"><a href="#kontakt">Kërko ofertë</a><a href="mailto:homecare-ks@outlook.com">Email</a><a href="#kontakt">WhatsApp</a></div></div></div><div class="copyright"><span>© 2026 HomeCare Kosovo. Të gjitha të drejtat e rezervuara.</span><span>Prishtinë · Kosovë</span></div></div></footer>
+<div class="toast" id="toast">Faleminderit! Kërkesa juaj u pranua. Në versionin live kjo lidhet me email/WhatsApp/CRM.</div>
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+function sendForm(e){e.preventDefault();document.getElementById('toast').style.display='block';setTimeout(()=>document.getElementById('toast').style.display='none',4000);e.target.reset();}
+</script>
+<a class="whatsapp" href="https://wa.me/38343909647?text=Përshëndetje%20HomeCare%20Kosovo%2C%20dua%20të%20marr%20një%20ofertë." target="_blank" aria-label="WhatsApp">◉</a>
+<script>
+const LANGS=['sq','de','en'];
+let lang='sq';
+const T={
+'SQ / DE':'DE / EN / SQ',
+'Property Care për diasporën':'Property Care für die Diaspora',
+'Kërko ofertë falas →':'Kostenloses Angebot →',
+'Shiko paketat':'Pakete ansehen',
+'Shtëpia jote në Kosovë.':'Ihr Zuhause im Kosovo.',
+'Kujdesi ynë.':'Unsere Verantwortung.',
+'Ti je larg. Ne jemi aty.':'Sie sind weit weg. Wir sind vor Ort.',
+'Paketat tona':'Unsere Pakete',
+'Shërbimet tona':'Unsere Leistungen',
+'Si funksionon?':'So funktioniert es',
+'Pyetjet më të shpeshta':'Häufige Fragen',
+'Na kontaktoni':'Kontaktieren Sie uns'
+};
+const EN={
+'Property Care për diasporën':'Property Care for the diaspora','Kërko ofertë falas →':'Request a free quote →','Shiko paketat':'View packages','Shtëpia jote në Kosovë.':'Your home in Kosovo.','Kujdesi ynë.':'Our care.','Ti je larg. Ne jemi aty.':'You are far away. We are there.','Paketat tona':'Our packages','Shërbimet tona':'Our services','Si funksionon?':'How it works','Pyetjet më të shpeshta':'Frequently asked questions','Na kontaktoni':'Contact us'
+};
+const original=new Map();
+document.querySelectorAll('h1,h2,h3,.eyebrow,.btn,.section-head p,.hero p,.hero-points div,.check span,.desc,.faq-q,.faq-a,.trust li,.trust p').forEach(el=>original.set(el,el.innerHTML));
+function toggleLang(){
+ lang=LANGS[(LANGS.indexOf(lang)+1)%LANGS.length];
+ document.documentElement.lang=lang;
+ document.querySelectorAll('h1,h2,h3,.eyebrow,.btn,.section-head p,.hero p,.hero-points div,.check span,.desc,.faq-q,.faq-a,.trust li,.trust p').forEach(el=>{
+   const base=original.get(el); if(!base) return;
+   if(lang==='sq') el.innerHTML=base;
+   else if(lang==='de') el.innerHTML=T[el.innerText.trim()]||base;
+   else el.innerHTML=EN[el.innerText.trim()]||base;
+ });
+ document.querySelector('.lang-btn').innerText=lang==='sq'?'SQ / DE / EN':lang==='de'?'DE / EN / SQ':'EN / SQ / DE';
+}
+</script>
+</body></html>
