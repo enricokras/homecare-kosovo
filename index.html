@@ -24,8 +24,8 @@ section{padding:90px 0}.section-head{max-width:700px;margin-bottom:45px}.section
 .contact{background:var(--light)}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}.contact-card,.form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}.contact-row{display:flex;gap:14px;margin:20px 0}.contact-row .icon{flex:none}.contact-row h4{margin:0;color:var(--navy)}.contact-row p{margin:2px 0;color:var(--muted);font-size:14px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.form-grid .full{grid-column:1/-1}label{font-size:13px;font-weight:800;color:var(--navy)}input,select,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;margin-top:6px;font:inherit}textarea{min-height:130px;resize:vertical}button{border:0;cursor:pointer;font:inherit}
 footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}.footer-title{color:#fff;font-weight:900}.footer-links{display:grid;gap:8px;font-size:14px}.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:20px;font-size:12px;display:flex;justify-content:space-between}
-.mobile{display:none}.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:15px 18px;border-radius:12px;display:none;z-index:100;box-shadow:var(--shadow)}
-@media(max-width:950px){.links{display:none}.mobile{display:block}.plans{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid,.faq-grid{grid-template-columns:1fr}.about-img{min-height:330px}}
+.mobile{display:none}.mobile-toggle{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;font-size:20px;line-height:1}.mobile-menu{display:none;position:absolute;left:4%;right:4%;top:70px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:var(--shadow);z-index:100}.mobile-menu.open{display:grid;gap:4px}.mobile-menu a,.mobile-menu button{padding:12px;border-radius:9px;text-align:left;font-weight:800;background:#fff;border:0}.mobile-menu a:hover,.mobile-menu button:hover{background:var(--light);color:var(--green)}.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:15px 18px;border-radius:12px;display:none;z-index:100;box-shadow:var(--shadow)}
+@media(max-width:950px){.links{display:none}.mobile{display:flex;align-items:center;gap:8px}.mobile-menu{top:76px}.plans{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid,.faq-grid{grid-template-columns:1fr}.about-img{min-height:330px}}
 @media(max-width:600px){.topbar .container{justify-content:center}.topbar span:last-child{display:none}.hero{min-height:700px}.hero-content{padding:60px 0}.hero h1{font-size:45px}.hero p{font-size:16px}.stats{grid-template-columns:1fr;margin-top:20px}.plans,.services,.steps{grid-template-columns:1fr}.plan.popular{transform:none}.section-head h2{font-size:34px}.special{display:block}.special .btn{margin-top:18px}.footer-grid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
 </style>
 <style>
@@ -39,7 +39,17 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <header><div class="container"><nav>
 <a class="logo" href="#home"><div class="logo-mark">⌂</div><div>HOMECARE<small>KOSOVO</small></div></a>
 <div class="links"><a href="#home">Home</a><a href="#paketat">Paketat</a><a href="#sherbimet">Shërbimet</a><a href="#si-funksionon">Si funksionon</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a><a class="cta" href="#kontakt">Kërko ofertë</a><button class="lang lang-btn" onclick="toggleLang()">SQ / DE</button></div>
-<div class="mobile"><a class="cta" href="#kontakt">Kërko ofertë</a></div>
+<div class="mobile"><button class="mobile-toggle" type="button" aria-label="Menu" onclick="toggleMobileMenu()">☰</button></div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#home" onclick="closeMobileMenu()" data-mnav="home">Home</a>
+<a href="#paketat" onclick="closeMobileMenu()" data-mnav="packages">Paketat</a>
+<a href="#sherbimet" onclick="closeMobileMenu()" data-mnav="services">Shërbimet</a>
+<a href="#si-funksionon" onclick="closeMobileMenu()" data-mnav="how">Si funksionon</a>
+<a href="#faq" onclick="closeMobileMenu()" data-mnav="faq">FAQ</a>
+<a href="#kontakt" onclick="closeMobileMenu()" data-mnav="contact">Kontakt</a>
+<a class="cta" href="#kontakt" onclick="closeMobileMenu()" data-mnav="offer">Kërko ofertë</a>
+<button type="button" class="lang-btn" onclick="toggleLang(); closeMobileMenu()">SQ / DE / EN</button>
+</div>
 </nav></div></header>
 
 <main>
@@ -51,7 +61,7 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <div class="hero-points"><div>✓ Kontroll & dokumentim</div><div>✓ Mirëmbajtje & riparime</div><div>✓ Pastrim</div><div>✓ Oborr & kopsht</div><div>✓ Raport në WhatsApp</div></div>
 </div></div></section>
 
-<div class="container"><div class="stats"><div class="stat"><strong>100+</strong><span>Klientë të kënaqur</span></div><div class="stat"><strong>50+</strong><span>Partnerë lokalë</span></div><div class="stat"><strong>4.9/5</strong><span>Vlerësim i synuar i klientëve</span></div></div></div>
+<div class="container"><div class="stats"><div class="stat"><strong>3</strong><span>Gjuhë të disponueshme</span></div><div class="stat"><strong>1</strong><span>Kontakt direkt me ekipin</span></div><div class="stat"><strong>✓</strong><span>Raportim pas vizitave</span></div></div></div>
 
 <section><div class="container"><div class="about-grid"><div class="about-img"></div><div><div class="eyebrow">Për shqiptarët e diasporës</div><div class="section-head"><h2>Ti je larg. Ne jemi aty.</h2><p>Një ekip lokal që kujdeset për pronën tënde në Kosovë, me transparencë të plotë dhe raportim pas çdo vizite.</p></div><div class="checks"><div class="check"><b>✓</b><span>Çdo vizitë dokumentohet me foto dhe video.</span></div><div class="check"><b>✓</b><span>Çdo shpenzim shtesë aprovohet nga ju.</span></div><div class="check"><b>✓</b><span>Koordinojmë mjeshtër dhe shërbime lokale.</span></div><div class="check"><b>✓</b><span>Ju informojmë menjëherë nëse zbulohet problem.</span></div></div><a class="btn btn-primary" href="#kontakt">Mëso më shumë →</a></div></div></div></section>
 
@@ -142,7 +152,7 @@ const LANG = {
     heroText:"Jeton në Gjermani, Zvicër apo Austri dhe ke shtëpi, banesë ose vilë në Kosovë? Ne e kontrollojmë, mirëmbajmë dhe kujdesemi për pronën tënde — edhe kur ti je mijëra kilometra larg.",
     freeOffer:"Kërko ofertë falas →", seePackages:"Shiko paketat",
     points:["✓ Kontroll & dokumentim","✓ Mirëmbajtje & riparime","✓ Pastrim","✓ Oborr & kopsht","✓ Raport në WhatsApp"],
-    stat1:"Klientë të kënaqur", stat2:"Partnerë lokalë", stat3:"Vlerësim i synuar i klientëve",
+    stat1:"Gjuhë të disponueshme", stat2:"Kontakt direkt me ekipin", stat3:"Raportim pas vizitave",
     aboutEyebrow:"Për shqiptarët e diasporës", aboutTitle:"Ti je larg. Ne jemi aty.",
     aboutText:"Një ekip lokal që kujdeset për pronën tënde në Kosovë, me transparencë të plotë dhe raportim pas çdo vizite.",
     checks:["✓|Çdo vizitë dokumentohet me foto dhe video.","✓|Çdo shpenzim shtesë aprovohet nga ju.","✓|Koordinojmë mjeshtër dhe shërbime lokale.","✓|Ju informojmë menjëherë nëse zbulohet problem."],
@@ -168,7 +178,7 @@ const LANG = {
     heroText:"Sie leben in Deutschland, der Schweiz oder Österreich und besitzen ein Haus, eine Wohnung oder eine Villa im Kosovo? Wir kontrollieren, warten und betreuen Ihre Immobilie – auch wenn Sie tausende Kilometer entfernt sind.",
     freeOffer:"Kostenloses Angebot →", seePackages:"Pakete ansehen",
     points:["✓ Kontrolle & Dokumentation","✓ Wartung & Reparaturen","✓ Reinigung","✓ Garten & Außenbereich","✓ Bericht per WhatsApp"],
-    stat1:"Zufriedene Kunden", stat2:"Lokale Partner", stat3:"Angestrebte Kundenbewertung",
+    stat1:"Verfügbare Sprachen", stat2:"Direkter Kontakt zum Team", stat3:"Bericht nach den Besuchen",
     aboutEyebrow:"Für die kosovarische Diaspora", aboutTitle:"Sie sind weit weg. Wir sind vor Ort.",
     aboutText:"Ein lokales Team, das sich um Ihre Immobilie im Kosovo kümmert – mit voller Transparenz und einem Bericht nach jedem Besuch.",
     checks:["✓|Jeder Besuch wird mit Fotos und Videos dokumentiert.","✓|Zusätzliche Kosten werden vorher von Ihnen genehmigt.","✓|Wir koordinieren Handwerker und lokale Dienstleistungen.","✓|Bei Problemen informieren wir Sie sofort."],
@@ -194,7 +204,7 @@ const LANG = {
     heroText:"Do you live in Germany, Switzerland or Austria and own a house, apartment or villa in Kosovo? We inspect, maintain and care for your property — even when you are thousands of kilometers away.",
     freeOffer:"Request a free offer →", seePackages:"View packages",
     points:["✓ Inspection & documentation","✓ Maintenance & repairs","✓ Cleaning","✓ Yard & garden","✓ WhatsApp reports"],
-    stat1:"Satisfied clients", stat2:"Local partners", stat3:"Target customer rating",
+    stat1:"Available languages", stat2:"Direct team contact", stat3:"Report after visits",
     aboutEyebrow:"For the Kosovo diaspora", aboutTitle:"You are far away. We are there.",
     aboutText:"A local team that takes care of your property in Kosovo with full transparency and a report after every visit.",
     checks:["✓|Every visit is documented with photos and videos.","✓|Any additional cost is approved by you first.","✓|We coordinate trusted tradespeople and local services.","✓|We inform you immediately if a problem is found."],
@@ -230,7 +240,9 @@ function applyLanguage(lang){
       a[3].textContent=t.navHow; a[4].textContent=t.navFaq; a[5].textContent=t.navContact; a[6].textContent=t.navOffer;
     }
   }
-  document.querySelector(".lang-btn").textContent=lang==="sq"?"SQ / DE / EN":lang==="de"?"DE / EN / SQ":"EN / SQ / DE";
+  const mobileLabels={home:t.navHome,packages:t.navPackages,services:t.navServices,how:t.navHow,faq:t.navFaq,contact:t.navContact,offer:t.navOffer};
+  document.querySelectorAll("[data-mnav]").forEach(e=>e.textContent=mobileLabels[e.dataset.mnav]);
+  document.querySelectorAll(".lang-btn").forEach(e=>e.textContent=lang==="sq"?"SQ / DE / EN":lang==="de"?"DE / EN / SQ":"EN / SQ / DE");
 
   document.querySelector(".hero .eyebrow").textContent=t.eyebrow;
   document.querySelector(".hero h1").innerHTML=t.heroTitle;
@@ -315,6 +327,12 @@ function applyLanguage(lang){
   form.querySelector("button").textContent=t.send;
 }
 
+function toggleMobileMenu(){
+  document.getElementById("mobileMenu").classList.toggle("open");
+}
+function closeMobileMenu(){
+  document.getElementById("mobileMenu").classList.remove("open");
+}
 function toggleLang(){
   const next={sq:"de",de:"en",en:"sq"}[currentLang];
   applyLanguage(next);
