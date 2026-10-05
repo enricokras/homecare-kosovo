@@ -22,11 +22,11 @@ section{padding:90px 0}.section-head{max-width:700px;margin-bottom:45px}.section
 .special{margin-top:25px;background:var(--navy);color:#fff;border-radius:20px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.special h3{margin:0 0 5px}.special p{margin:0;color:#c8d9d7}
 .faq-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:30px}.faq-item{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}.faq-q{padding:18px 20px;font-weight:800;display:flex;justify-content:space-between;cursor:pointer}.faq-a{display:none;padding:0 20px 18px;color:var(--muted);font-size:14px}.faq-item.open .faq-a{display:block}.trust{background:#eaf7f2;border-radius:18px;padding:28px}.trust h3{color:var(--navy)}.trust li{margin:10px 0}
 .contact{background:var(--light)}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}.contact-card,.form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px}.contact-row{display:flex;gap:14px;margin:20px 0}.contact-row .icon{flex:none}.contact-row h4{margin:0;color:var(--navy)}.contact-row p{margin:2px 0;color:var(--muted);font-size:14px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.full{grid-column:1/-1}label{font-size:13px;font-weight:800;color:var(--navy)}input,select,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;margin-top:6px;font:inherit}textarea{min-height:130px;resize:vertical}button{border:0;cursor:pointer;font:inherit}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.form-grid .full{grid-column:1/-1}label{font-size:13px;font-weight:800;color:var(--navy)}input,select,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;margin-top:6px;font:inherit}textarea{min-height:130px;resize:vertical}button{border:0;cursor:pointer;font:inherit}
 footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}.footer-title{color:#fff;font-weight:900}.footer-links{display:grid;gap:8px;font-size:14px}.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:20px;font-size:12px;display:flex;justify-content:space-between}
 .mobile{display:none}.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:15px 18px;border-radius:12px;display:none;z-index:100;box-shadow:var(--shadow)}
 @media(max-width:950px){.links{display:none}.mobile{display:block}.plans{grid-template-columns:repeat(2,1fr)}.services{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid,.faq-grid{grid-template-columns:1fr}.about-img{min-height:330px}}
-@media(max-width:600px){.topbar .container{justify-content:center}.topbar span:last-child{display:none}.hero{min-height:700px}.hero-content{padding:60px 0}.hero h1{font-size:45px}.hero p{font-size:16px}.stats{grid-template-columns:1fr;margin-top:20px}.plans,.services,.steps{grid-template-columns:1fr}.plan.popular{transform:none}.section-head h2{font-size:34px}.special{display:block}.special .btn{margin-top:18px}.footer-grid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}form{grid-template-columns:1fr}.full{grid-column:auto}}
+@media(max-width:600px){.topbar .container{justify-content:center}.topbar span:last-child{display:none}.hero{min-height:700px}.hero-content{padding:60px 0}.hero h1{font-size:45px}.hero p{font-size:16px}.stats{grid-template-columns:1fr;margin-top:20px}.plans,.services,.steps{grid-template-columns:1fr}.plan.popular{transform:none}.section-head h2{font-size:34px}.special{display:block}.special .btn{margin-top:18px}.footer-grid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
 </style>
 <style>
 .whatsapp{position:fixed;right:20px;bottom:20px;z-index:90;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:27px;box-shadow:0 10px 25px rgba(0,0,0,.18)}
@@ -94,38 +94,42 @@ footer{background:var(--navy);color:#d8e5e3;padding:50px 0 25px}.footer-grid{dis
 <div class="contact-row"><div class="icon">✉️</div><div><h4>Email</h4><p>homecare-ks@outlook.com</p></div></div>
 <div class="contact-row"><div class="icon">🕐</div><div><h4>Orari</h4><p>Hënë–Premte: 08:00–18:00<br>Urgjencë: sipas paketës</p></div></div>
 </div>
-<div class="form"><form name="contact" id="contactForm" onsubmit="sendForm(event)"><div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div><div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div><div><label>Email<input type="email" name="email" required placeholder="email@example.com"></label></div><div><label>Paketa<select name="paketa"><option>Basic — €29</option><option>Plus — €59</option><option>Premium — €99</option><option>VIP — €149</option><option>Home Inspection — €49</option></select></label></div><div class="full"><label>Adresa e pronës<input name="adresa" required placeholder="Qyteti / fshati / adresa"></label></div><div class="full"><label>Mesazhi<textarea name="mesazhi" placeholder="Na tregoni çfarë shërbimi ju nevojitet..."></textarea></label></div><div class="full"><button class="btn btn-primary" type="submit">Dërgo kërkesën →</button></div></form></div></div></div></section>
+<div class="form"><div id="contactForm" class="form-grid"><div><label>Emri dhe mbiemri<input name="emri" required placeholder="Emri juaj"></label></div><div><label>Numri i telefonit<input name="telefoni" required placeholder="+383 ..."></label></div><div><label>Email<input type="email" name="email" required placeholder="email@example.com"></label></div><div><label>Paketa<select name="paketa"><option>Basic — €29</option><option>Plus — €59</option><option>Premium — €99</option><option>VIP — €149</option><option>Home Inspection — €49</option></select></label></div><div class="full"><label>Adresa e pronës<input name="adresa" required placeholder="Qyteti / fshati / adresa"></label></div><div class="full"><label>Mesazhi<textarea name="mesazhi" placeholder="Na tregoni çfarë shërbimi ju nevojitet..."></textarea></label></div><div class="full"><button class="btn btn-primary" type="button" onclick="sendForm()">Dërgo kërkesën →</button></div></div></div></div></div></section>
 </main>
 
 <footer><div class="container"><div class="footer-grid"><div><div class="logo" style="color:#fff"><div class="logo-mark" style="background:#fff;color:var(--navy)">⌂</div><div>HOMECARE<small>KOSOVO</small></div></div><p>Ti je larg. Ne jemi aty.</p></div><div><div class="footer-title">Faqet</div><div class="footer-links"><a href="#home">Home</a><a href="#paketat">Paketat</a><a href="#sherbimet">Shërbimet</a><a href="#si-funksionon">Si funksionon</a></div></div><div><div class="footer-title">Kontakt</div><div class="footer-links"><a href="#kontakt">Kërko ofertë</a><a href="mailto:homecare-ks@outlook.com">Email</a><a href="#kontakt">WhatsApp</a></div></div></div><div class="copyright"><span>© 2026 HomeCare Kosovo. Të gjitha të drejtat e rezervuara.</span><span>Prishtinë · Kosovë</span></div></div></footer>
 <div class="toast" id="toast">Faleminderit! Kërkesa juaj u pranua. Në versionin live kjo lidhet me email/WhatsApp/CRM.</div>
 <script>
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-function sendForm(e){
-  e.preventDefault();
+function sendForm(){
+  const form = document.getElementById("contactForm");
+  const emri = form.querySelector('[name="emri"]').value.trim();
+  const telefoni = form.querySelector('[name="telefoni"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
+  const paketa = form.querySelector('[name="paketa"]').value;
+  const adresa = form.querySelector('[name="adresa"]').value.trim();
+  const mesazhi = form.querySelector('[name="mesazhi"]').value.trim();
 
-  const form = e.currentTarget;
-  const emri = form.emri.value.trim();
-  const telefoni = form.telefoni.value.trim();
-  const email = form.email.value.trim();
-  const paketa = form.paketa.value;
-  const adresa = form.adresa.value.trim();
-  const mesazhi = form.mesazhi.value.trim();
+  if(!emri || !telefoni || !email || !adresa){
+    alert("Ju lutem plotësoni emrin, telefonin, emailin dhe adresën.");
+    return;
+  }
 
-  const message =
-    "Përshëndetje HomeCare Kosovo!\n\n" +
-    "Dua të kërkoj një ofertë.\n\n" +
-    "Emri: " + emri + "\n" +
-    "Telefon: " + telefoni + "\n" +
-    "Email: " + email + "\n" +
-    "Paketa: " + paketa + "\n" +
-    "Adresa e pronës: " + adresa + "\n" +
-    "Mesazhi: " + (mesazhi || "Nuk ka mesazh shtesë.");
+  const message = [
+    "Përshëndetje HomeCare Kosovo!",
+    "",
+    "Dua të kërkoj një ofertë.",
+    "",
+    "Emri: " + emri,
+    "Telefon: " + telefoni,
+    "Email: " + email,
+    "Paketa: " + paketa,
+    "Adresa e pronës: " + adresa,
+    "Mesazhi: " + (mesazhi || "Nuk ka mesazh shtesë.")
+  ].join("\n");
 
-  const url = "https://wa.me/38343909647?text=" + encodeURIComponent(message);
-
-  // Use the same tab: this avoids popup blockers and prevents form POST/405 errors.
-  window.location.assign(url);
+  const waUrl = "https://wa.me/38343909647?text=" + encodeURIComponent(message);
+  window.location.href = waUrl;
 }
 </script>
 <a class="whatsapp" href="https://wa.me/38343909647?text=Përshëndetje%20HomeCare%20Kosovo%2C%20dua%20të%20marr%20një%20ofertë." target="_blank" aria-label="WhatsApp">◉</a>
@@ -295,7 +299,7 @@ function applyLanguage(lang){
   rows[3].querySelector("h4").textContent=t.hours;
   rows[3].querySelector("p").innerHTML=t.hoursText;
 
-  const form=contact.querySelector("form");
+  const form=contact.querySelector("#contactForm");
   const labels=form.querySelectorAll("label");
   labels[0].childNodes[0].textContent=t.labels[0];
   labels[1].childNodes[0].textContent=t.labels[1];
@@ -303,11 +307,11 @@ function applyLanguage(lang){
   labels[3].childNodes[0].textContent=t.labels[3];
   labels[4].childNodes[0].textContent=t.labels[4];
   labels[5].childNodes[0].textContent=t.labels[5];
-  form.emri.placeholder=t.placeholders[0];
-  form.telefoni.placeholder=t.placeholders[1];
-  form.email.placeholder=t.placeholders[2];
-  form.adresa.placeholder=t.placeholders[3];
-  form.mesazhi.placeholder=t.placeholders[4];
+  form.querySelector("[name=emri]").placeholder=t.placeholders[0];
+  form.querySelector("[name=telefoni]").placeholder=t.placeholders[1];
+  form.querySelector("[name=email]").placeholder=t.placeholders[2];
+  form.querySelector("[name=adresa]").placeholder=t.placeholders[3];
+  form.querySelector("[name=mesazhi]").placeholder=t.placeholders[4];
   form.querySelector("button").textContent=t.send;
 }
 
