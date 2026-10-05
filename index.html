@@ -230,8 +230,7 @@ function sendForm(){
   ].join("\n");
 
   const waUrl = "https://wa.me/38343909647?text=" + encodeURIComponent(message);
-  const opened = window.open(waUrl, "_blank", "noopener");
-  if(!opened){ window.location.href = waUrl; }
+  window.location.href = waUrl;
 }
 </script>
 <a class="whatsapp" href="https://wa.me/38343909647?text=Përshëndetje%20HomeCare%20Kosovo%2C%20dua%20të%20marr%20një%20ofertë." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
@@ -444,7 +443,6 @@ function applyLanguage(lang){
     imp.querySelector(".legal-card h4").textContent=t.impressum.responsibleTitle;
     imp.querySelector(".legal-card h4 + p").textContent=t.impressum.responsibleText;
   }
-}
 
 function toggleMobileMenu(){
   document.getElementById("mobileMenu").classList.toggle("open");
